@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import core.jdbc.ConnectionManager;
-import next.model.User;
+import next.support.context.model.User;
 
 public class UserDao {
     public void insert(User user) throws SQLException {

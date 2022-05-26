@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.google.common.collect.Maps;
 
-import next.model.User;
+import next.support.context.model.User;
 
 public class DataBase {
     private static Map<String, User> users = Maps.newHashMap();
@@ -18,6 +18,9 @@ public class DataBase {
         return users.get(userId);
     }
 
+    public static void updateUser(String user,User modifyUser){
+        users.replace(user, modifyUser);
+    }
     public static Collection<User> findAll() {
         return users.values();
     }

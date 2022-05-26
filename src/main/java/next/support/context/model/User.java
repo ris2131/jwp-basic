@@ -1,4 +1,4 @@
-package next.model;
+package next.support.context.model;
 
 public class User {
     private String userId;
