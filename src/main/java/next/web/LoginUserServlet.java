@@ -24,10 +24,15 @@ public class LoginUserServlet extends HttpServlet {
                 //아하 세션을 request 에서 가져 와야하는구나.
                 HttpSession session = req.getSession();
                 session.setAttribute("user",user);//User user 객체를 "user"라는 이름으로 attribute 설정.
-
+                //세션처리라 redirect 가능
+                resp.sendRedirect("/index.jsp");//임시.. 절대경로
+                return;
             }
         }
-        //세션처리라 redirect 가능
-        resp.sendRedirect("/index.jsp");//임시.. 절대경로
+
+        //로그인 실패
+        RequestDispatcher rd = req.getRequestDispatcher("/user/login_failed.html");
+        rd.forward(req,resp);
+        //resp.sendRedirect("/user/login_failed.html");
     }
 }
