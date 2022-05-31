@@ -31,8 +31,8 @@ public class LoginUserServlet extends HttpServlet {
         }
 
         //로그인 실패
-        RequestDispatcher rd = req.getRequestDispatcher("/user/login_failed.html");
+        RequestDispatcher rd = req.getRequestDispatcher("/user/login_failed.jsp");
         rd.forward(req,resp);
-        //resp.sendRedirect("/user/login_failed.html");
+        //resp.sendRedirect("/user/login_failed.jsp");
     }
 }
